@@ -1,0 +1,10 @@
+# Java
+*.class
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/

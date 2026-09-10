@@ -1,0 +1,22 @@
+services:
+  server:
+    build: ./server
+    container_name: projeto-server
+    ports:
+      - "12345:12345"
+    networks:
+      - app-network
+
+  web:
+    image: nginx:alpine
+    container_name: projeto-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
